@@ -1,0 +1,11 @@
+﻿*.swp
+googletest/
+*.exe
+CMakeFiles/
+*stackdump
+Makefile
+CMakeCache*
+*.cmake
+*.a
+lib/
+

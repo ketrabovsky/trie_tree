@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.7)
+
+project(program)
+
+set(CMAKE_BINARY_DIR bin)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+add_subdirectory(googletest)
+
+set(Headers
+	Trie_tree.h
+)
+
+set(Sources
+	main.cpp
+	Trie_tree.cpp
+)
+
+enable_testing()
+
+add_library(program STATIC ${Sources} ${Headers})
+
+add_subdirectory(test)
+
+add_executable(programBinary ${Sources} ${Headers})
