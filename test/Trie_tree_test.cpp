@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-struct costam {
+struct Point {
 	int a;
 	int b;
 };
@@ -56,11 +56,11 @@ TEST(Trie_tree_test, insertWordAndValue)
 	//int val1 = 0x4141;
 	//int val2 = 0x4343;
 
-	costam val1 = {
+	Point val1 = {
 		.a = 15,
 		.b = 29
 	};
-	costam val2 = {
+	Point val2 = {
 		.a = 30,
 		.b = 49
 	};
@@ -81,11 +81,8 @@ TEST(Trie_tree_test, insertWordAndValue)
 	ASSERT_FALSE(nullptr == r1);
 	ASSERT_FALSE(nullptr == r2);
 
-	costam rr1 = *(costam*)r1;
-	costam rr2 = *(costam*)r2;
-
-	std::cout << "STRUCT 1 a: " << rr1.a << " b: " << rr1.b << std::endl;
-	std::cout << "STRUCT 2 a: " << rr2.a << " b: " << rr2.b << std::endl;
+	auto rr1 = *(Point*)r1;
+	auto rr2 = *(Point*)r2;
 
 	ASSERT_EQ(r1, &val1);
 	ASSERT_EQ(r2, &val2);

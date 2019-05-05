@@ -1,4 +1,5 @@
 ﻿*.swp
+.vscode
 googletest/
 *.exe
 CMakeFiles/

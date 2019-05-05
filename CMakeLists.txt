@@ -4,6 +4,7 @@ project(program)
 
 set(CMAKE_BINARY_DIR bin)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set (CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(googletest)
 
