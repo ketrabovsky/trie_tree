@@ -10,11 +10,17 @@ add_subdirectory(googletest)
 
 set(Headers
 	Trie_tree.h
+	Json.hpp
+	fileReader.hpp
+	Board.hpp
 )
 
 set(Sources
 	main.cpp
 	Trie_tree.cpp
+	Json.cpp
+	fileReader.cpp
+	Board.cpp
 )
 
 enable_testing()

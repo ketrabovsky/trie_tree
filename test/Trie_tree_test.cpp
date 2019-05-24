@@ -20,6 +20,9 @@ TEST(Trie_tree_test, insertWordAndCheck)
 	const std::string s6 = "mleczarz";
 	const std::string s7 = "potomek";
 	const std::string s8 = "pot";
+	const std::string s9 = "pota";
+	const std::string s10 = "muszkieter";
+	const std::string s11 = "muszkiet";
 
 	std::vector<std::string> test_vector;		
 	test_vector.push_back(s1);
@@ -29,6 +32,8 @@ TEST(Trie_tree_test, insertWordAndCheck)
 	test_vector.push_back(s5);
 	test_vector.push_back(s6);
 	test_vector.push_back(s7);
+	test_vector.push_back(s10);
+	test_vector.push_back(s11);
 
 	Tree tree;
 
@@ -37,24 +42,24 @@ TEST(Trie_tree_test, insertWordAndCheck)
 		tree.add_word(s);
 	}
 
+	EXPECT_TRUE(tree.check_if_word_exists(s1));
+	EXPECT_TRUE(tree.check_if_word_exists(s2));
+	EXPECT_TRUE(tree.check_if_word_exists(s3));
+	EXPECT_TRUE(tree.check_if_word_exists(s4));
+	EXPECT_TRUE(tree.check_if_word_exists(s5));
+	EXPECT_TRUE(tree.check_if_word_exists(s6));
+	EXPECT_TRUE(tree.check_if_word_exists(s7));
+	EXPECT_TRUE(tree.check_if_word_exists(s10));
+	EXPECT_TRUE(tree.check_if_word_exists(s11));
 
-	EXPECT_TRUE(true == tree.check_if_word_exists(s1));
-	EXPECT_TRUE(true == tree.check_if_word_exists(s2));
-	EXPECT_TRUE(true == tree.check_if_word_exists(s3));
-	EXPECT_TRUE(true == tree.check_if_word_exists(s4));
-	EXPECT_TRUE(true == tree.check_if_word_exists(s5));
-	EXPECT_TRUE(true == tree.check_if_word_exists(s6));
-	EXPECT_TRUE(true == tree.check_if_word_exists(s7));
-	EXPECT_TRUE(false == tree.check_if_word_exists(s8));
+	EXPECT_FALSE(tree.check_if_word_exists(s8));
+	EXPECT_FALSE(tree.check_if_word_exists(s9));
 }
 
 TEST(Trie_tree_test, insertWordAndValue)
 {
 	const std::string s1 = "mleko";
 	const std::string s2 = "mleczny";
-
-	//int val1 = 0x4141;
-	//int val2 = 0x4343;
 
 	Point val1 = {
 		.a = 15,
